@@ -1,0 +1,21 @@
+Running on: Tesla K80
+Detecting cells in frame 0
+Find: local_work_size = 256, global_work_size = 104448 
+Cells detected: 36
+
+Detection runtime
+-----------------
+GICOV computation: 0.24595 seconds
+   GICOV dilation: 0.00336 seconds
+            Total: 0.29885 seconds
+
+Tracking cells across 10 frames
+Processing frame 1 / 10Processing frame 2 / 10Processing frame 3 / 10Processing frame 4 / 10Processing frame 5 / 10Processing frame 6 / 10Processing frame 7 / 10Processing frame 8 / 10Processing frame 9 / 10Processing frame 10 / 10
+
+Tracking runtime (average per frame):
+------------------------------------
+MGVF computation: 0.03344 seconds
+ Snake evolution: 0.00283 seconds
+           Total: 0.03871 seconds
+
+Total application run time: 0.68599 seconds
