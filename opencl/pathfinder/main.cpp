@@ -89,7 +89,7 @@ void fatal(char *s)
 
 int main(int argc, char** argv)
 {
-	print("CL_DEVICE_TYPE_ACCELERATOR, %d\n", CL_DEVICE_TYPE_ACCELERATOR);
+	printf("CL_DEVICE_TYPE_ACCELERATOR, %d\n", CL_DEVICE_TYPE_ACCELERATOR);
 	std::chrono::time_point<std::chrono::system_clock> start, end;
 	start = std::chrono::system_clock::now();
 	init(argc, argv);
