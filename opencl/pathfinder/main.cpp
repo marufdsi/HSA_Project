@@ -74,9 +74,9 @@ void init(int argc, char** argv)
 	{
 		for (int j = 0; j < cols; j++)
 		{
-			printf("%d ", wall[i][j]);
+//			printf("%d ", wall[i][j]);
 		}
-		printf("\n");
+//		printf("\n");
 	}
 #endif
 }
@@ -100,6 +100,7 @@ int main(int argc, char** argv)
 	   pyramid_height, cols, borderCols, NUMBER_THREADS, blockCols, smallBlockCol); */
 
 	int size = rows * cols;
+	printf("row: %d, Column: %d", rows, cols);
 
 	// Create and initialize the OpenCL object.
 	OpenCL cl(1);  // 1 means to display output (debugging mode).
@@ -196,12 +197,12 @@ int main(int argc, char** argv)
 	h_outputBuffer[16383] = '\0';
 	
 #ifdef BENCH_PRINT
-	for (int i = 0; i < cols; i++)
-		printf("%d ", data[i]);
-	printf("\n");
-	for (int i = 0; i < cols; i++)
-		printf("%d ", result[i]);
-	printf("\n");
+	for (int i = 0; i < cols; i++){}
+//		printf("%d ", data[i]);
+//	printf("\n");
+	for (int i = 0; i < cols; i++){}
+//		printf("%d ", result[i]);
+//	printf("\n");
 #endif
 
 	// Memory cleanup here.
