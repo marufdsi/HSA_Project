@@ -90,7 +90,7 @@ void fatal(char *s)
 int main(int argc, char** argv)
 {
 	std::chrono::time_point<std::chrono::system_clock> start, end;
-	strat = std::chrono::system_clock::now();
+	start = std::chrono::system_clock::now();
 	init(argc, argv);
 	
 	// Pyramid parameters.
@@ -213,7 +213,7 @@ int main(int argc, char** argv)
 	delete[] wall;
 	delete[] result;
 	end = std::chrono::system_clock::now();
-	std::chrono::duration<double> elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_move - start_move);
+	std::chrono::duration<double> elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
 	printf("Elapsed Time: %lf", elapsed_time.count());
 	return EXIT_SUCCESS;
 }
