@@ -89,6 +89,7 @@ void fatal(char *s)
 
 int main(int argc, char** argv)
 {
+	print("CL_DEVICE_TYPE_ACCELERATOR, %d\n", CL_DEVICE_TYPE_ACCELERATOR);
 	std::chrono::time_point<std::chrono::system_clock> start, end;
 	start = std::chrono::system_clock::now();
 	init(argc, argv);
@@ -214,6 +215,6 @@ int main(int argc, char** argv)
 	delete[] result;
 	end = std::chrono::system_clock::now();
 	std::chrono::duration<double> elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-	printf("Elapsed Time: %lf", elapsed_time.count());
+	printf("Elapsed Time: %lf\n", elapsed_time.count());
 	return EXIT_SUCCESS;
 }
