@@ -207,7 +207,7 @@ void deallocateMemory()
 
 int main( int argc, char** argv) 
 {
-	std::chrono::time_point<std::chrono::system_clock> start, end;
+	std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
         start = std::chrono::system_clock::now();
 	printf("WG size of kernel_swap = %d, WG size of kernel_kmeans = %d \n", BLOCK_SIZE, BLOCK_SIZE2);
 
