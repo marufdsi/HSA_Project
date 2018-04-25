@@ -15,7 +15,8 @@
 #include <iostream>
 #include <fstream>
 #include <math.h>
-#include "CLHelper.h" 
+#include "CLHelper.h"
+#include <chrono>
  
 /*
  * Options 
@@ -209,6 +210,8 @@ int main(int argc, char** argv){
 		std::cout << "specify data file name and [device type] [device id]" << std::endl;
 		return 0;
 	}
+	std::chrono::time_point<std::chrono::system_clock> start, end;
+	start = std::chrono::system_clock::now();
 	const char* data_file_name = argv[1];
 	_clCmdParams(argc, argv);
 	cl_mem ff_variable, ff_flux_contribution_momentum_x, ff_flux_contribution_momentum_y,ff_flux_contribution_momentum_z,  ff_flux_contribution_density_energy;
@@ -412,6 +415,9 @@ int main(int argc, char** argv){
 		_clFree(step_factors);
 		_clRelease();		
 	}
+	end = std::chrono::system_clock::now();
+	std::chrono::duration<double> elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+	printf("Elapsed Time: %lf\n", elapsed_time.count());
 		
 	return 0;
 }
