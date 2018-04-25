@@ -6,7 +6,7 @@ CC = nvcc
 #INC = $(OPENCL_DIR)/include/ 
 #LIB = $(OPENCL_DIR)/lib/x86_64/
 
-FLAGS = -O3
+FLAGS = -O3 -std=c++11
 SRC = euler3d.cpp
 
 EXE = euler3d
