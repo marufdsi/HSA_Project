@@ -210,7 +210,7 @@ int main(int argc, char** argv){
 		std::cout << "specify data file name and [device type] [device id]" << std::endl;
 		return 0;
 	}
-	std::chrono::time_point<std::chrono::system_clock> start, end;
+	std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
 	start = std::chrono::system_clock::now();
 	const char* data_file_name = argv[1];
 	_clCmdParams(argc, argv);
