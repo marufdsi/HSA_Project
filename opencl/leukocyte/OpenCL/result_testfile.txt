@@ -1,0 +1,1 @@
+Error in find_ellipse_opencl.c at line 223: Invalid OpenCL error code

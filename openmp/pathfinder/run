@@ -1,0 +1,1 @@
+./pathfinder 1000 10000 20 > result_1000_10000.txt

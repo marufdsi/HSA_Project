@@ -1,0 +1,36 @@
+CL_DEVICE_TYPE_ACCELERATOR, 8
+row: 1000, Column: 10000
+=== 1 OpenCL platform(s) found: ===
+  -- 0 --
+  PROFILE = FULL_PROFILE
+  VERSION = OpenCL 1.2 CUDA 9.0.176
+  NAME = NVIDIA CUDA
+  VENDOR = NVIDIA Corporation
+  EXTENSIONS = cl_khr_global_int32_base_atomics cl_khr_global_int32_extended_atomics cl_khr_local_int32_base_atomics cl_khr_local_int32_extended_atomics cl_khr_fp64 cl_khr_byte_addressable_store cl_khr_icd cl_khr_gl_sharing cl_nv_compiler_options cl_nv_device_attribute_query cl_nv_pragma_unroll cl_nv_copy_opts cl_nv_create_buffer
+Using the default platform (platform 0)...
+
+=== 1 OpenCL device(s) found on platform:
+  -- 0 --
+  DEVICE_NAME = Tesla K80
+  DEVICE_VENDOR = NVIDIA Corporation
+  DEVICE_VERSION = OpenCL 1.2 CUDA
+  DRIVER_VERSION = 384.81
+  DEVICE_MAX_COMPUTE_UNITS = 13
+  DEVICE_MAX_CLOCK_FREQUENCY = 823
+  DEVICE_GLOBAL_MEM_SIZE = 11995578368
+  CL_DEVICE_LOCAL_MEM_SIZE = 49152
+
+
+*************************************************
+***   OUTPUT FROM COMPILING THE KERNEL FILE   ***
+*************************************************
+
+
+
+*************************************************
+*** END OUTPUT FROM COMPILING THE KERNEL FILE ***
+*************************************************
+
+
+Max local threads is 1024. Using 1000 for local work size. 
+Elapsed Time: 0.560000

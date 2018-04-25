@@ -1,0 +1,2 @@
+./kmeans_serial/kmeans -i ../../data/kmeans/inpuGen/10000000_34.txt > result_10000000_34.txt 
+#./kmeans_openmp/kmeans -n 8 -i ../../data/kmeans/kdd_cup > result_kdd_omp.txt

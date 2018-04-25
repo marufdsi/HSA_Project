@@ -1,0 +1,1 @@
+./euler3d_cpu ../../data/cfd/missile.domn.0.2M > result_missile.txt

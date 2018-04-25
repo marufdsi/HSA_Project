@@ -1,0 +1,4 @@
+Generate input matrix internally, size =3072
+Creating matrix internally size=3072
+running OMP on host
+Time consumed(ms): 535.240000

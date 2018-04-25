@@ -1,0 +1,2 @@
+# ./omp/lud_omp -n 32 -i ../../data/lud/512.dat 
+./omp/lud_omp -s 5120 > result_5120.txt 
