@@ -2,7 +2,7 @@ include ../../common/make.config
 # C compiler
 CC = g++
 OCL = nvcc
-CC_FLAGS = -g -O3 -std=c++11
+CC_FLAGS = -g -O2 -std=c++11
 
 kmeans: cluster.o getopt.o read_input.o kmeans_clustering.o rmse.o
 	$(OCL) $(KERNEL_DIM) $(CC_FLAGS)  kmeans.cpp cluster.o getopt.o read_input.o kmeans_clustering.o rmse.o -o kmeans -I../util -DTIMING -lOpenCL -lOpenCL
