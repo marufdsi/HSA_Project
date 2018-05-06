@@ -1,0 +1,11 @@
+Number of records: 42764
+Finding the 50 closest neighbors.
+Number of platforms detected:1
+Checking For OpenCl Compatible Devices
+Platform 0:	Vendor: NVIDIA Corporation
+	No of devices for Platform 0 is 1
+	Device: 0	Vendor: NVIDIA Corporation
+		Name: Tesla K80
+Enter Platform and Device No (Seperated by Space) 
+Using Platform 0 	 Device No 1145656910 
+Invalid Device Number

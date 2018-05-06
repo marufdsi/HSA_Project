@@ -2,10 +2,12 @@
 #define __NEAREST_NEIGHBOR__
 
 #include "nearestNeighbor.h"
-
+#include <chrono>
 cl_context context=NULL;
 
 int main(int argc, char *argv[]) {
+std::chrono::time_point<std::chrono::system_clock> start, end;
+	start = std::chrono::system_clock::now();
   std::vector<Record> records;
   float *recordDistances;
   //LatLong locations[REC_WINDOW];
@@ -49,6 +51,9 @@ int main(int argc, char *argv[]) {
       printf("%s --> Distance=%f\n",records[i].recString,records[i].distance);
     }
   free(recordDistances);
+	end = std::chrono::system_clock::now();
+	std::chrono::duration<double> elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+	printf("Elapsed Time: %lf\n", elapsed_time.count());
   return 0;
 }
 

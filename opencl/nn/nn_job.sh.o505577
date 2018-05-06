@@ -1,0 +1,56 @@
+Number of records: 42764
+Finding the 50 closest neighbors.
+Using Platform 0 	 Device No 0 
+Creating GPU Context
+
+	nearestNeighbor_kernel.cl
+1988 12 27  0 18 TONY       30.0  89.8  113   39 --> Distance=0.199997
+1980 10 22 18  3 ISAAC      30.1  90.4  110  778 --> Distance=0.412312
+1997 11 14 12 24 HELENE     30.5  89.8  134  529 --> Distance=0.538515
+2003  8 27 12 10 TONY       29.9  89.4  160  286 --> Distance=0.608275
+1974 12 22 18 24 JOYCE      30.6  89.9   80  593 --> Distance=0.608276
+1973  1 26 18  3 GORDON     30.5  90.5   98  651 --> Distance=0.707107
+1955  6 11 12  7 ALBERTO    29.6  90.6  134  346 --> Distance=0.721109
+1971  5  3  6 27 CHRIS      30.7  89.8   87  741 --> Distance=0.728011
+1995  8 10 12 11 PATTY      29.2  90.0   92   62 --> Distance=0.799999
+1958  2 22  0 15 CHRIS      30.1  89.2   49  802 --> Distance=0.806229
+1955  2  1  0  7 OSCAR      29.8  90.9   46  470 --> Distance=0.921956
+2003  5  9 12 15 HELENE     29.1  90.5   56  701 --> Distance=1.029563
+1994  6 11  0  6 FLORENCE   29.5  90.9  145  374 --> Distance=1.029564
+1961  2 18 18  4 ALBERTO    30.5  91.0   91  667 --> Distance=1.118034
+1967  4 22 18 21 CHRIS      28.8  90.1   27  543 --> Distance=1.204160
+1951  4 14 18 26 MICHAEL    28.9  90.6  135  609 --> Distance=1.252996
+1971  6 16  6 24 WILLIAM    30.9  89.1  117  500 --> Distance=1.272793
+2000 10 21 12 26 WILLIAM    28.7  90.1  162  726 --> Distance=1.303840
+1984  2 18  6 26 MICHAEL    31.2  89.2   84  711 --> Distance=1.442223
+1984  8 17 12 22 ISAAC      29.8  91.5   22  146 --> Distance=1.513275
+1956  8 15  6 11 ALBERTO    31.0  91.2  106  154 --> Distance=1.562048
+1953  4 28 12 17 JOYCE      31.5  89.2  147  335 --> Distance=1.700001
+1956 12 12 18 17 ERNESTO    28.3  89.7   22  325 --> Distance=1.726269
+1952  9 13  0  6 RAFAEL     28.9  88.5  159  745 --> Distance=1.860108
+1955  8 16 12  2 FLORENCE   31.9  90.1  110  742 --> Distance=1.902629
+1996  1 26 12  8 MICHAEL    28.5  88.8   68  422 --> Distance=1.920936
+1970 10  9  6 28 RAFAEL     30.8  88.1   55  175 --> Distance=2.061554
+2002  5 27  0 11 GORDON     31.9  90.9   57  677 --> Distance=2.102380
+1987  6 18  6 23 CHRIS      29.8  92.1   22  147 --> Distance=2.109501
+1971 11  9 18  9 PATTY      28.1  91.1   68  789 --> Distance=2.195449
+1955  5 18 12 25 NADINE     27.8  90.3   85    9 --> Distance=2.220361
+1974  1  4  0 20 ISAAC      27.8  90.3   55  542 --> Distance=2.220361
+1955  5 21  0 18 CHRIS      32.1  89.2   47  551 --> Distance=2.247220
+1968  3 24 12 23 HELENE     28.6  91.8   73  800 --> Distance=2.280353
+1965 12 18  0 13 FLORENCE   29.8  87.7  132  311 --> Distance=2.308682
+1989  5  4  0 23 ALBERTO    27.7  90.4  112  207 --> Distance=2.334523
+1987  5  1 18  8 NADINE     32.2  89.0   90  269 --> Distance=2.416610
+1965  5 13  0 17 TONY       27.8  89.0  122  260 --> Distance=2.416610
+1954 10  9  6  6 MICHAEL    31.3  92.1  120  457 --> Distance=2.469816
+1986  2  4 12 11 RAFAEL     30.1  87.5   84  677 --> Distance=2.501999
+1993 10  9 18 20 LESLIE     27.8  88.8  129  766 --> Distance=2.505992
+1994 12 28 18 11 HELENE     29.2  87.6   72  657 --> Distance=2.529823
+1979 11  4  6  5 ERNESTO    32.5  89.6   66  376 --> Distance=2.531798
+1981  2 22  6 27 FLORENCE   32.4  91.1   78  713 --> Distance=2.640076
+1991  3 18 12 19 DEBBY      28.5  87.8  107  850 --> Distance=2.662703
+1954 10 24 18 12 GORDON     32.2  91.5   72  411 --> Distance=2.662706
+1998  1  2 12 22 PATTY      29.9  87.3  115   94 --> Distance=2.701848
+2004  5  4  0 21 FLORENCE   29.8  92.7  129  782 --> Distance=2.707394
+1996  2 18 12  8 TONY       28.1  92.1   49  280 --> Distance=2.831959
+1967  2 14  0  5 RAFAEL     28.7  87.4  158  337 --> Distance=2.906887

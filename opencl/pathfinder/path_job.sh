@@ -1,2 +1,2 @@
 cd Projects/HSA/rodinia_3.1/opencl/pathfinder
-./pathfinder 100000 100 20 > result_100000_100.txt
+./pathfinder 1000 1000 20 > result_1000_1000.txt
