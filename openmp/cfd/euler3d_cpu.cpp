@@ -474,11 +474,11 @@ int main(int argc, char** argv)
 	// these need to be computed the first time in order to compute time step
 	std::cout << "Starting..." << std::endl;
 #ifdef _OPENMP
+	energyStart = GetEnergyCPU();
 	double start = omp_get_wtime();
     #ifdef OMP_OFFLOAD
         #pragma omp target map(alloc: old_variables[0:(nelr*NVAR)]) map(to: nelr, areas[0:nelr], step_factors[0:nelr], elements_surrounding_elements[0:(nelr*NNB)], normals[0:(NDIM*NNB*nelr)], fluxes[0:(nelr*NVAR)], ff_variable[0:NVAR], ff_flux_contribution_momentum_x, ff_flux_contribution_momentum_y, ff_flux_contribution_momentum_z, ff_flux_contribution_density_energy) map(variables[0:(nelr*NVAR)])
     #endif
-    energyStart = GetEnergyCPU();
 #endif
 	// Begin iterations
 	for(int i = 0; i < iterations; i++)
