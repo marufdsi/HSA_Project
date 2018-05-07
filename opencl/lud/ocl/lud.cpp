@@ -112,7 +112,7 @@ static struct option long_options[] = {
 int
 main ( int argc, char *argv[] )
 {
-	stopwatch_start(&sw);
+
   printf("WG size of kernel = %d X %d\n", BLOCK_SIZE, BLOCK_SIZE);
 	/// Start the Timer
 	auto start_time = std::chrono::high_resolution_clock::now();
@@ -122,6 +122,7 @@ main ( int argc, char *argv[] )
 	const char *input_file = NULL;
 	float *m, *mm;
 	stopwatch sw;
+	stopwatch_start(&sw);
 	
 	while ((opt = getopt_long(argc, argv, "::vs:i:", 
                             long_options, &option_index)) != -1 ) {

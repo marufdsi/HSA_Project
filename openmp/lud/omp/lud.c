@@ -41,7 +41,7 @@ lud_omp(float *m, int matrix_dim);
 int
 main ( int argc, char *argv[] )
 {
-  stopwatch_start(&sw);
+
   int matrix_dim = 32; /* default size */
   int opt, option_index=0;
   func_ret_t ret;
@@ -49,6 +49,7 @@ main ( int argc, char *argv[] )
   float *m, *mm;
   stopwatch sw;
 
+  stopwatch_start(&sw);
 	
   while ((opt = getopt_long(argc, argv, "::vs:n:i:", 
                             long_options, &option_index)) != -1 ) {
