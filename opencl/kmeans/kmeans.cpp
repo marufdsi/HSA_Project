@@ -207,16 +207,16 @@ void deallocateMemory()
 
 int main( int argc, char** argv) 
 {
-	std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
-        start = std::chrono::system_clock::now();
+	/// Start the Timer
+	auto start_time = std::chrono::high_resolution_clock::now();
 	printf("WG size of kernel_swap = %d, WG size of kernel_kmeans = %d \n", BLOCK_SIZE, BLOCK_SIZE2);
 
 	setup(argc, argv);
 	shutdown();
-	end = std::chrono::system_clock::now();
-	std::chrono::duration<double> elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-	double elapsed_time = elapsed.count();
-	printf("\n Elapsed Time: %f\n", elapsed_time);
+	/// Stop the Timer
+	auto end_time = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::milli> elapsed_time = end_time - start_time;
+	printf("Elapsed Time: %lf\n", elapsed_time.count());
 }
 
 int	kmeansOCL(float **feature,    /* in: [npoints][nfeatures] */
