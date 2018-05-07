@@ -2,6 +2,7 @@ include ../../common/make.config
 #C compiler
 CC = nvcc
 
+KERNEL_DIM =-DRD_WG_SIZE_1=128 -DRD_WG_SIZE_2=192 -DRD_WG_SIZE_3=128 -DRD_WG_SIZE_4=256
 #OPENCL_DIR = /home/sc5nf/ati-stream-sdk-v2.2-lnx64/
 #INC = $(OPENCL_DIR)/include/ 
 #LIB = $(OPENCL_DIR)/lib/x86_64/
