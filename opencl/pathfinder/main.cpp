@@ -90,8 +90,8 @@ void fatal(char *s)
 int main(int argc, char** argv)
 {
 	printf("CL_DEVICE_TYPE_ACCELERATOR, %d\n", CL_DEVICE_TYPE_ACCELERATOR);
-	std::chrono::time_point<std::chrono::system_clock> start, end;
-	start = std::chrono::system_clock::now();
+	/// Start the Timer
+	auto start_time = std::chrono::high_resolution_clock::now();
 	init(argc, argv);
 	
 	// Pyramid parameters.
@@ -213,8 +213,9 @@ int main(int argc, char** argv)
 	delete[] data;
 	delete[] wall;
 	delete[] result;
-	end = std::chrono::system_clock::now();
-	std::chrono::duration<double> elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+	/// Stop the Timer
+	auto end_time = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::milli> elapsed_time = end_time - start_time;
 	printf("Elapsed Time: %lf\n", elapsed_time.count());
 	return EXIT_SUCCESS;
 }
