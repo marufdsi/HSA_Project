@@ -523,8 +523,6 @@ int main(int argc, char** argv)
 	std::chrono::duration<double, std::milli> elapsed_time = end_time - start_time;
 	printf("Elapsed Time: %lf\n", elapsed_time.count());
 
-
-	totalTime = TimeDiff(start, end);
 	totalEnergy = energyEnd - energyStart;
 	if (energyStart != -1) // -1 --> failed to read energy values
 	{
