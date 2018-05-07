@@ -501,8 +501,6 @@ int main(int argc, char** argv)
 	energyEnd = GetEnergyCPU();
 	  totalTime = (end-start);
 	  totalEnergy = energyEnd - energyStart;
-
-	  printf("Computation done in %0.3lf ms.\n", TimeDiff(start, end));
 	  if (energyStart != -1) // -1 --> failed to read energy values
 	  {
 		printf("Total energy used is %0.3lf jouls.\n", totalEnergy);
