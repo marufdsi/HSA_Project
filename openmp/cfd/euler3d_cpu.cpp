@@ -372,7 +372,7 @@ void time_step(int j, int nelr, float* old_variables, float* variables, float* s
  */
 int main(int argc, char** argv)
 {
-	auto start = std::chrono::high_resolution_clock::now();
+	auto start_time = std::chrono::high_resolution_clock::now();
 	if (argc < 2)
 	{
 		std::cout << "specify data file name" << std::endl;
@@ -514,8 +514,8 @@ int main(int argc, char** argv)
 
 	std::cout << "Done..." << std::endl;
 
-	auto end = std::chrono::high_resolution_clock::now();
-	std::chrono::duration<double, std::milli> elapsed_time = end - start;
+	auto end_time = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::milli> elapsed_time = end_time - start_time;
 	printf("Elapsed Time: %lf\n", elapsed_time.count());
 	return 0;
 }
