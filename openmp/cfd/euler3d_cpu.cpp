@@ -498,6 +498,15 @@ int main(int argc, char** argv)
 	double end = omp_get_wtime();
 	std::cout  << "Compute time: " << (end-start) << std::endl;
 	energyEnd = GetEnergyCPU();
+	  totalTime = (end-start);
+	  totalEnergy = energyEnd - energyStart;
+
+	  printf("Computation done in %0.3lf ms.\n", TimeDiff(start, end));
+	  if (energyStart != -1) // -1 --> failed to read energy values
+	  {
+		printf("Total energy used is %0.3lf jouls.\n", totalEnergy);
+		printf("Average power consumption is %0.3lf watts.\n", totalEnergy/(totalTime/1000.0));
+	  }
 #endif
 
 
@@ -523,11 +532,5 @@ int main(int argc, char** argv)
 	std::chrono::duration<double, std::milli> elapsed_time = end_time - start_time;
 	printf("Elapsed Time: %lf\n", elapsed_time.count());
 
-	totalEnergy = energyEnd - energyStart;
-	if (energyStart != -1) // -1 --> failed to read energy values
-	{
-		printf("Total energy used is %0.3lf jouls.\n", totalEnergy);
-		printf("Average power consumption is %0.3lf watts.\n", totalEnergy/(elapsed_time.count()/1000.0));
-	}
 	return 0;
 }
