@@ -6,7 +6,7 @@ LIB = -L$(OPENCL_LIB)
 
 #C compiler
 CC = nvcc
-CC_FLAGS = -g -O3
+CC_FLAGS = -g -O3 -std=c++11
 
 EXE = lud
 

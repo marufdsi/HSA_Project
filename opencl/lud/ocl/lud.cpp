@@ -28,6 +28,7 @@
 
 #include <string.h>
 #include <string>
+#include <chrono>
 #ifdef RD_WG_SIZE_0_0
         #define BLOCK_SIZE RD_WG_SIZE_0_0
 #elif defined(RD_WG_SIZE_0)
@@ -112,6 +113,8 @@ int
 main ( int argc, char *argv[] )
 {
   printf("WG size of kernel = %d X %d\n", BLOCK_SIZE, BLOCK_SIZE);
+	/// Start the Timer
+	auto start_time = std::chrono::high_resolution_clock::now();
 	int matrix_dim = 32; /* default matrix_dim */
 	int opt, option_index=0;
 	func_ret_t ret;
@@ -310,7 +313,12 @@ main ( int argc, char *argv[] )
 	}
 
 	free(m);
-	
+
+	/// Stop the Timer
+	auto end_time = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::milli> elapsed_time = end_time - start_time;
+	printf("Elapsed Time: %lf\n", elapsed_time.count());
+
 	if(shutdown()) return -1;
 	
 }				
