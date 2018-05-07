@@ -233,7 +233,7 @@ int main(int argc, char **argv) {
         printf("\n\n");
     }
 */
-	printf("Time for process: %f\n", timing);
+	printf("Time for process: %f\n", timing*1000);
 
     free(attributes);
     free(cluster_centres[0]);
