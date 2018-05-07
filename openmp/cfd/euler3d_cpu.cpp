@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
+#include "../../common/power_cpu.h"
 
 #ifdef OMP_OFFLOAD
 #pragma omp declare target
@@ -373,6 +374,7 @@ void time_step(int j, int nelr, float* old_variables, float* variables, float* s
 int main(int argc, char** argv)
 {
 	auto start_time = std::chrono::high_resolution_clock::now();
+	double energyStart, energyEnd, totalEnergy;
 	if (argc < 2)
 	{
 		std::cout << "specify data file name" << std::endl;
@@ -475,6 +477,7 @@ int main(int argc, char** argv)
     #ifdef OMP_OFFLOAD
         #pragma omp target map(alloc: old_variables[0:(nelr*NVAR)]) map(to: nelr, areas[0:nelr], step_factors[0:nelr], elements_surrounding_elements[0:(nelr*NNB)], normals[0:(NDIM*NNB*nelr)], fluxes[0:(nelr*NVAR)], ff_variable[0:NVAR], ff_flux_contribution_momentum_x, ff_flux_contribution_momentum_y, ff_flux_contribution_momentum_z, ff_flux_contribution_density_energy) map(variables[0:(nelr*NVAR)])
     #endif
+    energyStart = GetEnergyCPU();
 #endif
 	// Begin iterations
 	for(int i = 0; i < iterations; i++)
@@ -494,6 +497,7 @@ int main(int argc, char** argv)
 #ifdef _OPENMP
 	double end = omp_get_wtime();
 	std::cout  << "Compute time: " << (end-start) << std::endl;
+	energyEnd = GetEnergyCPU();
 #endif
 
 
@@ -514,8 +518,18 @@ int main(int argc, char** argv)
 
 	std::cout << "Done..." << std::endl;
 
+
 	auto end_time = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double, std::milli> elapsed_time = end_time - start_time;
 	printf("Elapsed Time: %lf\n", elapsed_time.count());
+
+
+	totalTime = TimeDiff(start, end);
+	totalEnergy = energyEnd - energyStart;
+	if (energyStart != -1) // -1 --> failed to read energy values
+	{
+		printf("Total energy used is %0.3lf jouls.\n", totalEnergy);
+		printf("Average power consumption is %0.3lf watts.\n", totalEnergy/(elapsed_time.count()/1000.0));
+	}
 	return 0;
 }
