@@ -78,19 +78,15 @@ int main(int argc, char** argv)
 {
     int omp_num_threads = atoi(argv[3]);
     omp_set_num_threads(omp_num_threads);
-    std::chrono::time_point<std::chrono::system_clock> start, end;
-    double elapsedTime = 0.0;
     /// Start the Timer
-    start = std::chrono::system_clock::now();
+    auto start_time = std::chrono::high_resolution_clock::now();
 
     run(argc,argv);
     
     /// Stop the Timer
-    end = std::chrono::system_clock::now();
-    /// Calculate Elapsed Time
-    std::chrono::duration<double> elapsed_seconds_move = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-    elapsedTime = elapsed_seconds_move.count();
-    printf("Elapsed Time: %f \n", elapsedTime);
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> elapsed_time = end_time - start_time;
+    printf("Elapsed Time: %lf\n", elapsed_time.count());
     return EXIT_SUCCESS;
 }
 
