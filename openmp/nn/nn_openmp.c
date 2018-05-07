@@ -153,7 +153,7 @@ int main(int argc, char* argv[]) {
 	
 
     long long time1 = clock();
-    printf("total time : %15.12f s", (float) (time1 - time0) / 1000000);
+    printf("total time : %15.12f s", (float) (time1 - time0) / 1000);
     return 0;
 }
 

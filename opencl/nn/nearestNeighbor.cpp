@@ -6,8 +6,8 @@
 cl_context context=NULL;
 
 int main(int argc, char *argv[]) {
-std::chrono::time_point<std::chrono::system_clock> start, end;
-	start = std::chrono::system_clock::now();
+/// Start the Timer
+    auto start_time = std::chrono::high_resolution_clock::now();
   std::vector<Record> records;
   float *recordDistances;
   //LatLong locations[REC_WINDOW];
@@ -51,9 +51,10 @@ std::chrono::time_point<std::chrono::system_clock> start, end;
       printf("%s --> Distance=%f\n",records[i].recString,records[i].distance);
     }
   free(recordDistances);
-	end = std::chrono::system_clock::now();
-	std::chrono::duration<double> elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-	printf("Elapsed Time: %lf\n", elapsed_time.count());
+    /// Stop the Timer
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> elapsed_time = end_time - start_time;
+    printf("Elapsed Time: %lf\n", elapsed_time.count());
   return 0;
 }
 
