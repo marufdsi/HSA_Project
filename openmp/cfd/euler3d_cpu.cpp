@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <chrono>
 
 #ifdef OMP_OFFLOAD
 #pragma omp declare target
@@ -371,6 +372,7 @@ void time_step(int j, int nelr, float* old_variables, float* variables, float* s
  */
 int main(int argc, char** argv)
 {
+	auto start = std::chrono::high_resolution_clock::now();
 	if (argc < 2)
 	{
 		std::cout << "specify data file name" << std::endl;
@@ -512,5 +514,8 @@ int main(int argc, char** argv)
 
 	std::cout << "Done..." << std::endl;
 
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::milli> elapsed_time = end - start;
+	printf("Elapsed Time: %lf\n", elapsed_time.count());
 	return 0;
 }
