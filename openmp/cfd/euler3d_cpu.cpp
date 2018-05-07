@@ -374,6 +374,7 @@ void time_step(int j, int nelr, float* old_variables, float* variables, float* s
 int main(int argc, char** argv)
 {
 	auto start_time = std::chrono::high_resolution_clock::now();
+	double totalTime;
 	double energyStart, energyEnd, totalEnergy;
 	if (argc < 2)
 	{
