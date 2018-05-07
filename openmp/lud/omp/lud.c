@@ -41,6 +41,7 @@ lud_omp(float *m, int matrix_dim);
 int
 main ( int argc, char *argv[] )
 {
+  stopwatch_start(&sw);
   int matrix_dim = 32; /* default size */
   int opt, option_index=0;
   func_ret_t ret;
@@ -117,7 +118,7 @@ main ( int argc, char *argv[] )
   }
 
 
-  stopwatch_start(&sw);
+//  stopwatch_start(&sw);
   lud_omp(m, matrix_dim);
   stopwatch_stop(&sw);
   printf("Time consumed(ms): %lf\n", 1000*get_interval_by_sec(&sw));

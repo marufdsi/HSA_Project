@@ -112,6 +112,7 @@ static struct option long_options[] = {
 int
 main ( int argc, char *argv[] )
 {
+	stopwatch_start(&sw);
   printf("WG size of kernel = %d X %d\n", BLOCK_SIZE, BLOCK_SIZE);
 	/// Start the Timer
 	auto start_time = std::chrono::high_resolution_clock::now();
@@ -242,7 +243,7 @@ main ( int argc, char *argv[] )
 	if(err != CL_SUCCESS) { printf("ERROR: clCreateBuffer d_m (size:%d) => %d\n", matrix_dim*matrix_dim, err); return -1;} 
 
 	/* beginning of timing point */
-	stopwatch_start(&sw);
+//	stopwatch_start(&sw);
 	err = clEnqueueWriteBuffer(cmd_queue, d_m, 1, 0, matrix_dim*matrix_dim*sizeof(float), m, 0, 0, 0);
 	if(err != CL_SUCCESS) { printf("ERROR: clEnqueueWriteBuffer d_m (size:%d) => %d\n", matrix_dim*matrix_dim, err); return -1; }
 	
